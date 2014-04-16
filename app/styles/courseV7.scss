@@ -1,0 +1,154 @@
+//Imports
+@import "compass";
+@import "mixins/mixins";
+@import "compass/reset";
+@import "compass/css3/border-radius";
+
+//Variables
+$lightGray: #D8DCDD;
+$midGray: #A2ACB4;
+$darkGray: #4D525A;
+$lightGreen: #85C446;
+$darkGreen: #163D22;
+$yellow: #FDB817;
+$turquoise: #00ACA1;
+$lightRed: #ff8080;
+$orange: #FF9933;
+//Includes
+@include font-face("Helvetica Neue", font-files("b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf", "bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff"));
+@include font-face("Helvetica Neue Bold", font-files("8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf", "14ff6081-326d-4dae-b778-d7afa66166fc.woff"));
+
+//Styles
+//Universal
+html{
+    font-family:"Helvetica Neue", "Helvetica", "Arial";
+    font-size:16px;
+    color:$darkGray;
+}
+
+strong{
+    font-weight:bold !important;
+    font-family:"Helvetica Neue Bold", "Helvetica", "Arial" !important;
+}
+
+//Buttons
+//Base button class
+.btn{
+  @include border-radius(4px, 4px);
+  padding: .5em 1.5em .5em 1.5em;
+  border: 1px solid ;
+  color:#fff;
+  font-size:1em;
+  text-decoration:none;
+}
+
+.greenbtn{
+    cursor:pointer;
+    background-color:$lightGreen;
+    &:active{
+        background-color: scale-lightness($lightGreen, -20%);
+    }
+}
+
+.nextpagebtn{
+  float:right;
+  margin-top:1em;
+}
+
+#courseContainer{
+    margin:5em auto;
+    width:618px;
+    border:1px solid $lightGray;
+    border-top:7px solid $lightGreen;
+    padding: 2.25em 2.25em 4.5em 2.25em;
+    h1{
+        font-size:3em;
+        color: $lightGreen;
+    }
+    p{
+        margin-top:1.5em;
+        margin-bottom:1.5em;
+        line-height:1.45em;
+        letter-spacing:.01em;
+    }
+    img{
+        width:100%;
+    }
+}
+
+.finalStatus{
+  min-height:20em;
+  width:100%;
+  margin-top:3.3em;
+  border-top:2px solid $lightGray;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+.activityContainer{
+    min-height:10em;
+    width:100%;
+    border:2px solid $lightGray;
+    border-top:7px solid $turquoise;
+    margin-top:2em;
+    .activityHeader{
+        float:left;
+        padding-left:1.8em;
+        width:100%;
+        color:$turquoise;
+        line-height:3.3em;
+        width:9em;
+    }
+    .questionCount{
+        float:right;
+        padding-right:1.5em;
+        margin-top:1em;
+        & div{
+          float:left;
+        }
+    }
+    .activityQuestion{
+        margin-top:3.3em;
+        border-top:2px solid $lightGray;
+        .singleActivity{
+            width:100%;
+            height:100%;
+            padding-left:1em;
+            padding-right:1em;
+        }
+    }
+    .activityBottom{
+        .btn{
+            margin:1em 80%;
+        }
+        .feedbackText{
+          color:black;
+          position:absolute;
+          margin-top:1em;
+          margin-left:1em;
+          width:28em;
+        }
+    }
+}
+
+.incorrect{
+  background-color:$lightRed;
+}
+.correct{
+  background-color:scale-lightness($lightGreen, 20%);
+}
+
+//Activities
+.multipleChoice{
+  .mcOptions{
+    margin-left:1em;
+    p{
+      max-width:90%;
+      margin-left:1.5em;
+    }
+    input{
+      float:left;
+      margin-bottom:1.5em;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<h1>Step 2</h1>
+<p>Welcome to course {{course.courseName}} on page {{course.pageNum}}</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non tempus enim. Integer sed vulputate lorem. Nulla posuere, nibh sed consequat tempus, diam eros consequat metus, cursus elementum diam sem sed nisi. Pellentesque ullamcorper sapien diam, in lacinia justo accumsan in. Duis tincidunt feugiat tempus. In malesuada, massa sit amet vehicula accumsan, ipsum lorem adipiscing elit, vitae tincidunt urna urna eget diam. </p>
+<img src="http://placehold.it/618x340">
+<p>Mauris accumsan ante eu congue aliquet. Donec cursus dui ut dapibus molestie. Suspendisse aliquam quam eget cursus convallis. Praesent varius vulputate diam, non pulvinar ante tempor ut. Ut dui ipsum, vestibulum id dui eu, aliquet sagittis ligula. Quisque mattis imperdiet leo, et tincidunt lacus ullamcorper sed. Pellentesque blandit eros ut urna dictum semper. Fusce at ultricies ipsum, quis fringilla quam.</p>
+<img src="http://placehold.it/618x460">
+<p>Phasellus auctor viverra odio, eu feugiat tellus pulvinar a. Donec gravida in sem fermentum egestas. Curabitur vel sem ornare, sagittis nisi nec, tristique nunc. Cras varius massa eu urna rutrum vehicula. Aliquam eleifend sodales magna, et tempus mauris suscipit adipiscing. Pellentesque vel sapien lacinia, dignissim lacus a, viverra ligula. Vivamus blandit tortor ut tincidunt hendrerit. In hac habitasse platea dictumst. Donec venenatis enim posuere, pretium sem a, fermentum ipsum. Vestibulum id pharetra lacus. In id augue faucibus, scelerisque est at, aliquet nibh. Pellentesque facilisis erat sit amet tortor ornare ullamcorper. Vestibulum porttitor ut enim at sodales.</p>
+<iframe width="618" height="360" src="//www.youtube.com/embed/4ThvBNZdGcQ" frameborder="0" allowfullscreen></iframe>
+  <activity-shell number-of-questions="2">
+  <div ng-controller="ActivityCtrl">
+     <multiple-choice
+       question-num="1"
+       question-text="This is a question, and I want you to choose the correct answer below."
+       answers="[{text:'I\m the first choice, so obviously I am the correct choice also. Pick me!', q_id: 1},{text:'Choice 1 is full of himself. Why not zoidberg--errr option 2?', q_id: 2},{text:'Pfft I could care less if you choose me or another options. I prefer to ramble on and on and basically make it difficult for a page layout to fit properly because we need monitors with lots and lots of pixels. Need to start getting 4K monitors around here.', q_id: 3},{text:'I\'m choice 4 and I\'m at the bottom!!', q_id: 4}]"
+       incorrect-text="Sorry, that is incorrect because you should always pick Zoidberg"
+       answer-id="2">
+     </multiple-choice>
+     <multiple-choice
+       question-num="2"
+       question-text="You are now on question 2, so do the same thing."
+       answers="[{text:'I\m the first choice, so obviously I am the correct choice also. Pick me!', q_id: 1},{text:'Choice 1 is full of himself. Why not zoidberg--errr option 2?', q_id: 2},{text:'Pfft I could care less if you choose me or another options. I prefer to ramble on and on and basically make it difficult for a page layout to fit properly because we need monitors with lots and lots of pixels. Need to start getting 4K monitors around here.', q_id: 3},{text:'I\'m choice 4 and I\'m at the bottom!!', q_id: 4}]"
+       incorrect-text="Answer 3 is correct because of lorem ipsum dolor sit amet."
+       answer-id="3">
+     </multiple-choice>
+   </div>
+  </activity-shell>

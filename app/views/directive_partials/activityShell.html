@@ -1,0 +1,25 @@
+<div class="activityContainer">
+  <h3 class="activityHeader">Activity</h3>
+  <div class="questionCount">
+    <div ng-repeat="question in answerTracker"><span ng-class="question.state">O</span></div>
+  </div>
+    <div ng-hide="statusDisplayed" class="activityQuestion" ng-transclude>
+     <!--Transcluded content -->
+    </div>
+    <div class="finalStatus" ng-show="statusDisplayed">
+      <p>You got {{amountCorrect}} out of {{answerTracker.length}} correct.</p>
+      <p>Your score is {{(amountCorrect / answerTracker.length * 100)}}%</p>
+    </div>
+  <div class="activityBottom">
+    <div ng-hide="questionSubmitted" class="preSubmit">
+      <button ng-class="btnState" ng-disabled="!answerSelected" ng-click="submitQuestion()">Submit</button>
+    </div>
+    <div ng-show="questionSubmitted" ng-class="bottomState">
+      <div ng-show="correctAnswer && !statusDisplayed" class="feedbackText">Congratulations, you answered correctly!</div>
+      <div ng-show="!correctAnswer && !statusDisplayed" class="feedbackText">{{incorrectText}}</div>
+      <button ng-hide="statusDisplayed" ng-if="!onLastQuestion" class="btn greenbtn" ng-click="showNext()">Next</button>
+      <button ng-if="onLastQuestion" class="btn greenbtn" ng-click="viewResults()">View Results</button>
+      <button ng-if="statusDisplayed" class="btn greenbtn" ng-click="resetActivity()">Redo Activity</button>
+    </div>
+  </div>
+</div>

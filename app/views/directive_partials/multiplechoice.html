@@ -1,0 +1,9 @@
+<div ng-show="currentlyActive" class="multipleChoice singleActivity">
+  <div class="mcQuestion"><p ng-bind-html="questionText"></p></div>
+  <div class="mcOptions">
+  <label ng-repeat="question in answersObj">
+    <input type="radio" name="mcOptions" ng-model="selectedAnswer.answerId" ng-value="question.q_id">
+    <p>{{question.text}}</p>
+  </label>
+  </div>
+</div>

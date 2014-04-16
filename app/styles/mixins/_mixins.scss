@@ -1,0 +1,57 @@
+//Breakpoint Mixin
+/*
+	Written by: Jens Ahrengot Boddum
+	Updated by: Randy Massey
+
+	Below are the breakpoints provided from Gene Scheck:
+	Extra small devices Phones (<768px)       - - - left navigation to be smaller front print, icon based
+	Small devices Tablets (≥768px)                  - - - left navigation returns to full side if used
+	Medium devices Desktops (≥992px)       - - - add to right new content or right rail type of thing
+	Large devices Desktops (≥1200px)           - - - add additional content or expand current content front print
+*/
+@mixin breakpoint($point, $value: 0) {
+	@if $point == mobile {
+		@media (min-width: 320px) { @content; }
+	}
+
+	@else if $point == mobile-horizontal {
+		@media (min-width: 480px) { @content; }
+	}
+
+	@else if $point == tablet {
+		@media (min-width: 768px) { @content; }
+	}
+	
+	@else if $point == desktop {
+		@media (min-width: 992px) { @content; }
+	}
+
+	@else {
+		@media ($point: $value) { @content; }
+	}
+}
+
+@mixin between-breakpoints($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+//Clearfix mixin
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//Opacity mixin
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
